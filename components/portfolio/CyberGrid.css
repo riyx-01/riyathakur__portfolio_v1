@@ -1,0 +1,39 @@
+.cyber-grid-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: #0a0510;
+    z-index: 0;
+    perspective: 1000px;
+}
+
+.cyber-grid {
+    position: absolute;
+    width: 200vw;
+    height: 200vh;
+    bottom: -50vh;
+    left: -50vw;
+    background-image: 
+        linear-gradient(rgba(30, 144, 255, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 144, 255, 0.4) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: rotateX(60deg);
+    animation: grid-move 10s linear infinite;
+    transform-origin: center center;
+}
+
+.cyber-grid-fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #0a0510 0%, transparent 40%, #0a0510 100%);
+    pointer-events: none;
+}
+
+@keyframes grid-move {
+    0% {
+        transform: rotateX(60deg) translateY(0);
+    }
+    100% {
+        transform: rotateX(60deg) translateY(50px);
+    }
+}
