@@ -4,17 +4,17 @@ import React, { useState } from 'react';
 import ProjectTicket, { ProjectTicketProps } from './ProjectTicket';
 
 interface ProjectsDeckProps {
-    projects: (ProjectTicketProps & {
+    projects: {
         title: string;
         subtitle: string;
         stack: string;
-        desc: string;
-        features?: string;
-        demo?: string;
+        desc: React.ReactNode;
+        features?: React.ReactNode;
+        demo?: React.ReactNode;
         link?: string;
         linkText?: string;
         theme: 'blue' | 'red';
-    })[];
+    }[];
 }
 
 export default function ProjectsDeck({ projects }: ProjectsDeckProps) {
