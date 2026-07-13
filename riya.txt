@@ -1,0 +1,18 @@
+To run your new Cyber-Editorial Next.js Portfolio locally:
+
+1. Locate the folder where the portfolio was built:
+   `e:\my_projects\my_final_portfolio`
+
+2. Open a terminal (Command Prompt, PowerShell, or VS Code Terminal) in this directory.
+
+3. Install the required dependencies:
+   Run the command: `npm install`
+   (This will download Next.js, React, and Tailwind CSS based on the package.json we created).
+
+4. Start the development server:
+   Run the command: `npm run dev`
+
+5. Open your browser and navigate to:
+   http://localhost:3000
+
+NOTE: If you still want to view the Vanilla HTML/JS version of the app (which doesn't require a build step), you can simply double-click the `index.html` file in the same folder. However, the Next.js version will load the newly created Credentials React component on the page!

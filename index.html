@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIYA THAKUR | MCA.DEV</title>
+    <!-- System fonts fallback to a generic sans-serif, simulating Inter and JetBrains Mono -->
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            src: local('Inter'), local('Segoe UI'), local('Roboto'), local('Helvetica Neue'), sans-serif;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: local('JetBrains Mono'), local('Consolas'), local('Courier New'), monospace;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- APP ENVIRONMENT / BACKGROUND EFFECTS -->
+    <div class="scanline"></div>
+    <canvas id="balatro-canvas"></canvas>
+    <div id="magic-rings-container"></div>
+    
+    <div class="scroll-container">
+        <!-- 1. HERO / HEADER SECTION -->
+        <section id="hero" class="section hero-section">
+            <div class="hero-bg-wrapper">
+                <video class="hero-bg-video" autoplay loop muted playsinline>
+                    <source src="/video/open.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-content">
+                <h1 class="display-name">RIYA THAKUR</h1>
+                <h2 class="role-title">MCA CANDIDATE & FULL-STACK DEVELOPER</h2>
+                
+                <div class="hero-meta">
+                    <span class="badge">MCA.DEV</span>
+                    <span class="location">MUMBAI, INDIA</span>
+                </div>
+                
+                <p class="bio-summary">
+                    Results-driven Information Technology specialist with First-Class Honours (9.39/10 GPA). Demonstrated expertise in architecting full-stack web applications, implementing deep learning solutions, and leading technical teams.
+                </p>
+                
+                <div class="auth-prompt" id="auth-prompt">
+                    <span class="cursor">_</span>ACCESS GRANTED
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT / PERSPECTIVE SECTION -->
+        <section id="about" class="section about-section">
+            <div class="about-bg-wrapper">
+                <video class="about-bg-video" autoplay loop muted playsinline>
+                    <source src="/video/type.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">BIO (Perspective Log v.2025)</span>
+                    <h2 class="heading">ENGINEERING BETTER FUTURES</h2>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Bridging academic excellence and professional execution. Eager to drive digital transformation initiatives utilizing modern frameworks and intelligent algorithms.</p>
+                    </div>
+                    
+                    <div class="core-stats">
+                        <div class="stat-point">
+                            <span class="stat-label">IT GPA</span>
+                            <span class="stat-value">9.39</span>
+                        </div>
+                        <div class="stat-point">
+                            <span class="stat-label">GRADUATION YEAR</span>
+                            <span class="stat-value">2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="attributes-tags">
+                    <div class="tag">ADAPTABLE</div>
+                    <div class="tag">PROBLEM SOLVING</div>
+                    <div class="tag">SCALABLE DESIGN</div>
+                    <div class="tag">TEAM LEADERSHIP</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TECH CORE / SKILLS SECTION -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">TECH CORE</span>
+                    <h2 class="heading">SYSTEM MODULES</h2>
+                </div>
+                
+                <div class="asymmetric-grid">
+                    <!-- Red Module -->
+                    <div class="module red-module">
+                        <div class="module-header">[PROGRAMMING.SYS]</div>
+                        <ul class="skill-list">
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>JavaScript</li>
+                            <li>Java</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>R</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Blue Module -->
+                    <div class="module blue-module">
+                        <div class="module-header">[INTERFACE.SYS]</div>
+                        <ul class="skill-list">
+                            <li>Flask</li>
+                            <li>ASP.NET</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>WordPress</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Red Module -->
+                    <div class="module red-module">
+                        <div class="module-header">[DATA_DEX]</div>
+                        <ul class="skill-list">
+                            <li>TensorFlow</li>
+                            <li>Keras</li>
+                            <li>OpenCV</li>
+                            <li>CNN/ResNet</li>
+                            <li>Database Systems</li>
+                        </ul>
+                    </div>
+
+                    <!-- Blue Module -->
+                    <div class="module blue-module">
+                        <div class="module-header">[UTILITY.EXE]</div>
+                        <ul class="skill-list">
+                            <li>Git/GitHub</li>
+                            <li>Figma</li>
+                            <li>VS Code</li>
+                            <li>Jupyter</li>
+                            <li>Agile/REST</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PROJECTS INTERFACE -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">PROJECTS</span>
+                    <h2 class="heading">MISSION SELECT</h2>
+                </div>
+                
+                <div class="projects-deck-wrapper">
+                    <div class="projects-deck" id="projects-deck">
+                        <!-- Project 1 -->
+                        <div class="project-card blue-theme">
+                            <div class="card-inner">
+                                <div class="proj-header">
+                                    <h3>DS Visualizer (DataStruct2.0)</h3>
+                                    <span class="proj-subtitle">CORE VIZ ENGINE</span>
+                                </div>
+                                <div class="proj-stack">React, Three.js, Monaco, WASM</div>
+                                <p class="proj-desc">High-fidelity educational platform for visualizing complex data structures and algorithms in real-time with cinematic effects.</p>
+                                <div class="proj-features">
+                                    <strong>Features:</strong> Real-Time Code-to-Viz Monaco integration; 3D Skeuomorphic BookReader with TTS; WASM-powered secure execution sandbox.
+                                </div>
+                                <div class="proj-demo">
+                                    <strong>Demonstrates:</strong> Advanced UI/UX, Three.js, Algorithm Engineering
+                                </div>
+                                <a href="https://ds-vis.vercel.app/" target="_blank" class="proj-link blue-link">LAUNCH DEPLOYMENT</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-card red-theme">
+                            <div class="card-inner">
+                                <div class="proj-header">
+                                    <h3>Manthan Event Platform</h3>
+                                    <span class="proj-subtitle">LIVE ARCHITECTURE</span>
+                                </div>
+                                <div class="proj-stack">Lead Developer (Next.js, Framer)</div>
+                                <p class="proj-desc">Directed end-to-end development lifecycle for my institutional flagship event, serving over 110 concurrent users.</p>
+                                <div class="proj-features">
+                                    <strong>Features:</strong> Led planning and Agile sprints; Real-time performance analytics framework; Risk mitigation & production deployment.
+                                </div>
+                                <div class="proj-demo">
+                                    <strong>Demonstrates:</strong> Leadership, Teamwork, High-pressure production deployment
+                                </div>
+                                <a href="https://bvimitmanthan.vercel.app/" target="_blank" class="proj-link red-link">LAUNCH DEPLOYMENT</a>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="project-card blue-theme">
+                            <div class="card-inner">
+                                <div class="proj-header">
+                                    <h3>Deepfake Detection</h3>
+                                    <span class="proj-subtitle">ML / VISION</span>
+                                </div>
+                                <div class="proj-stack">Python, TensorFlow, ResNet-50, OpenCV</div>
+                                <p class="proj-desc">Production-ready deep learning pipeline achieving high accuracy in detecting manipulated visual media.</p>
+                                <div class="proj-features">
+                                    <strong>Features:</strong> Transfer learning with ResNet-50; Grad-CAM visualization algorithms (heatmaps); Tensor quantization for latency optimization.
+                                </div>
+                                <div class="proj-demo">
+                                    <strong>Demonstrates:</strong> Machine learning, Computer vision, Containerized web deployments
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="project-card red-theme">
+                            <div class="card-inner">
+                                <div class="proj-header">
+                                    <h3>Breast Cancer CNN</h3>
+                                    <span class="proj-subtitle">DIAGNOSTICS</span>
+                                </div>
+                                <div class="proj-stack">Python, TensorFlow, Keras, Scikit-learn</div>
+                                <p class="proj-desc">End-to-end deep learning solution for automated classification of breast tissue histology images with 88% accuracy.</p>
+                                <div class="proj-features">
+                                    <strong>Features:</strong> Medical image preprocessing & augmentation; Convolutional Neural Network training; Hyperparameter optimization.
+                                </div>
+                                <div class="proj-demo">
+                                    <strong>Demonstrates:</strong> Deep learning fundamentals, Data preprocessing, Ensemble modeling
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="project-card blue-theme">
+                            <div class="card-inner">
+                                <div class="proj-header">
+                                    <h3>Student Management</h3>
+                                    <span class="proj-subtitle">ARCHITECTURE</span>
+                                </div>
+                                <div class="proj-stack">ASP.NET MVC, C#, SQL Server, Bootstrap</div>
+                                <p class="proj-desc">Enterprise-grade web application facilitating student enrollment, course registration, and academic record management.</p>
+                                <div class="proj-features">
+                                    <strong>Features:</strong> Robust relational DB with stored procedures; Secure authentication & password encryption; Stakeholder specification alignment.
+                                </div>
+                                <div class="proj-demo">
+                                    <strong>Demonstrates:</strong> Backend development, Advanced Database logic, Enterprise Architecture
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 6 -->
+                        <div class="project-card red-theme">
+                            <div class="card-inner">
+                                <div class="proj-header">
+                                    <h3>Toontastic</h3>
+                                    <span class="proj-subtitle">INTERFACE</span>
+                                </div>
+                                <div class="proj-stack">JavaScript, CSS, HTML5, Figma</div>
+                                <p class="proj-desc">Responsive single-page application created for users to seamlessly explore and search cartoon programming metadata.</p>
+                                <div class="proj-features">
+                                    <strong>Features:</strong> Search cartoons by name & categories; Asynchronous data fetching & DOM logic; Clean responsive user interface.
+                                </div>
+                                <div class="proj-demo">
+                                    <strong>Demonstrates:</strong> Frontend development skills, User interface design, Async operations
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="deck-controls">
+                    <div class="deck-indicator" id="deck-progress"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. MILESTONES & ACHIEVEMENTS -->
+        <section id="achievements" class="section achievements-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">ACHIEVEMENTS</span>
+                    <h2 class="heading">TIMELINE LEDGER</h2>
+                </div>
+                
+                <div class="ledger">
+                    <div class="ledger-item">
+                        <div class="ledger-marker"></div>
+                        <div class="ledger-content">
+                            <h3>Technical Lead — Manthan Event</h3>
+                            <p>Directed end-to-end development lifecycle for institutional flagship event's digital infrastructure, successfully serving 110 concurrent users via Agile sprints and delivering production deployment securely.</p>
+                        </div>
+                    </div>
+                    <div class="ledger-item">
+                        <div class="ledger-marker"></div>
+                        <div class="ledger-content">
+                            <h3>The Hindu Change Maker Awards 2025</h3>
+                            <p>Provided critical real-time video editing and post-production support during this nationally televised award ceremony in a high-pressure, time-constrained environment.</p>
+                        </div>
+                    </div>
+                    <div class="ledger-item">
+                        <div class="ledger-marker"></div>
+                        <div class="ledger-content">
+                            <h3>Certifications</h3>
+                            <ul class="cert-list">
+                                <li>Google Python Programming</li>
+                                <li>Google Ads Display Certification</li>
+                                <li>Google UX Design Fundamentals</li>
+                                <li>Coursera Data Analytics Basics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CONTACT & LINKS -->
+        <section id="contact" class="section contact-section">
+            <div class="container terminal-footer">
+                <div class="terminal-header">
+                    <span>root@riya:~# ./contact.sh</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="contact-line">
+                        <span class="c-key">EMAIL:</span> 
+                        <a href="mailto:riyathakur155555@gmail.com" class="c-val hover-glitch" data-text="riyathakur155555@gmail.com">riyathakur155555@gmail.com</a>
+                    </div>
+                    <div class="contact-line">
+                        <span class="c-key">GITHUB:</span> 
+                        <span class="c-path">riyx-01 &rarr;</span>
+                        <a href="https://github.com/riyx-01" target="_blank" class="c-val hover-glitch" data-text="github.com/riyx-01">github.com/riyx-01</a>
+                    </div>
+                    <div class="contact-line">
+                        <span class="c-key">LINKEDIN:</span> 
+                        <span class="c-path">riyathakur01 &rarr;</span>
+                        <a href="https://www.linkedin.com/in/riyathakur01" target="_blank" class="c-val hover-glitch" data-text="linkedin.com/in/riyathakur01">linkedin.com/in/riyathakur01</a>
+                    </div>
+                    <div class="contact-line">
+                        <span class="c-key">RESUME:</span> 
+                        <span class="c-path">CV Link &rarr;</span>
+                        <a href="https://riyathakur-cv.netlify.app" target="_blank" class="c-val hover-glitch" data-text="riyathakur-cv.netlify.app">riyathakur-cv.netlify.app</a>
+                    </div>
+                    <div class="terminal-cursor">_</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Navigation Bar: Custom interactive GooeyNav -->
+    <nav class="gooey-nav">
+        <!-- SVG Filter for Gooey Effect -->
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;">
+            <defs>
+                <filter id="gooey">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                    <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9" result="gooey" />
+                    <feComposite in="SourceGraphic" in2="gooey" operator="atop" />
+                </filter>
+            </defs>
+        </svg>
+        <div class="nav-container">
+            <div class="nav-blob" id="nav-blob"></div>
+            <a href="#hero" class="nav-item active" data-index="0">Home</a>
+            <a href="#about" class="nav-item" data-index="1">About</a>
+            <a href="#skills" class="nav-item" data-index="2">Skills</a>
+            <a href="#projects" class="nav-item" data-index="3">Projects</a>
+            <a href="#achievements" class="nav-item" data-index="4">Achieve</a>
+            <a href="#contact" class="nav-item" data-index="5">Contact</a>
+        </div>
+    </nav>
+
+    <script src="main.js"></script>
+</body>
+</html>
