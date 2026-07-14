@@ -41,7 +41,7 @@ export default function ContactFlipCard() {
     };
 
     return (
-        <div className="w-full max-w-5xl mx-auto h-[600px] py-12" style={{ perspective: 2000 }}>
+        <div className="w-full max-w-5xl mx-auto h-[450px] md:h-[600px] py-4 md:py-12" style={{ perspective: 2000 }}>
             <motion.div
                 className="w-full h-full relative cursor-grab active:cursor-grabbing"
                 style={{ transformStyle: 'preserve-3d', rotateY }}
@@ -112,17 +112,17 @@ export default function ContactFlipCard() {
                         pointerEvents: isFlipped ? 'auto' : 'none' 
                     }}
                 >
-                    <div className="ticket-wrapper red-theme w-full h-full p-2" style={{ transform: 'none' }}>
-                        <div className="ticket w-full h-full border border-[#ff2020]/50 bg-[#1a0830]/95 backdrop-blur-xl p-8 shadow-[0_0_50px_rgba(255,32,32,0.3)] rounded-lg flex flex-col justify-between relative overflow-hidden">
+                    <div className="red-theme w-full h-full p-2 max-w-[450px] mx-auto md:max-w-none">
+                        <div className="w-full h-full border border-[#ff2020]/50 bg-[#1a0830]/95 backdrop-blur-xl p-4 md:p-8 shadow-[0_0_30px_rgba(255,32,32,0.3)] rounded-lg flex flex-col justify-between relative overflow-hidden">
                             {/* Matrix Rain effect on the back */}
                             <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-screen"></div>
                             
-                            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center gap-8">
+                            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center gap-4 md:gap-8">
                                 <div>
-                                    <h2 className="font-mono text-4xl md:text-5xl font-bold text-[#ff2020] tracking-widest mb-4">
+                                    <h2 className="font-mono text-2xl sm:text-3xl md:text-5xl font-bold text-[#ff2020] tracking-widest mb-2 md:mb-4">
                                         ACCESS GRANTED
                                     </h2>
-                                    <p className="text-xl text-[#94a3b8] font-mono">
+                                    <p className="text-sm sm:text-base md:text-xl text-[#94a3b8] font-mono px-2">
                                         &gt; Identity verified. Awaiting transmission...
                                     </p>
                                 </div>
@@ -132,14 +132,14 @@ export default function ContactFlipCard() {
                                     target="_blank" 
                                     rel="noreferrer"
                                     onPointerDown={(e) => e.stopPropagation()}
-                                    className="inline-block mt-8 px-12 py-4 border-2 border-[#ff2020] text-[#ff2020] hover:bg-[#ff2020] hover:text-black transition-all duration-300 font-mono text-xl md:text-2xl font-bold rounded-sm shadow-[0_0_20px_rgba(255,32,32,0.4)] hover:shadow-[0_0_40px_rgba(255,32,32,0.8)] scale-110 hover:scale-125 relative z-50 cursor-pointer"
+                                    className="inline-block mt-4 md:mt-8 px-6 py-3 md:px-12 md:py-4 border-2 border-[#ff2020] text-[#ff2020] hover:bg-[#ff2020] hover:text-black transition-all duration-300 font-mono text-base md:text-2xl font-bold rounded-sm shadow-[0_0_15px_rgba(255,32,32,0.4)] hover:shadow-[0_0_30px_rgba(255,32,32,0.8)] relative z-50 cursor-pointer"
                                 >
                                     [ VIEW RESUME ]
                                 </a>
                             </div>
                             
-                            <div className="absolute top-4 left-4 font-mono text-xs text-[#ff2020]/50">&lt; BACKEND_SYSTEM_ONLINE /&gt;</div>
-                            <div className="absolute bottom-4 right-4 font-mono text-xs text-[#ff2020]/50 animate-pulse">CONNECTION_SECURE</div>
+                            <div className="absolute top-2 left-2 md:top-4 md:left-4 font-mono text-[10px] md:text-xs text-[#ff2020]/50">&lt; BACKEND_ONLINE /&gt;</div>
+                            <div className="absolute bottom-2 right-2 md:bottom-4 md:right-4 font-mono text-[10px] md:text-xs text-[#ff2020]/50 animate-pulse">SECURE</div>
                         </div>
                     </div>
 
@@ -147,7 +147,7 @@ export default function ContactFlipCard() {
                     <button 
                         onClick={handleFlipToFront}
                         onPointerDown={(e) => e.stopPropagation()}
-                        className="absolute bottom-8 left-8 z-50 px-6 py-2 border border-[#ff2020] bg-[#0a0510]/80 text-[#ff2020] hover:bg-[#ff2020] hover:text-black font-mono text-sm tracking-widest transition-colors rounded-sm shadow-[0_0_15px_rgba(255,32,32,0.3)] cursor-pointer"
+                        className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-50 px-4 py-2 border border-[#ff2020] bg-[#0a0510]/80 text-[#ff2020] hover:bg-[#ff2020] hover:text-black font-mono text-xs md:text-sm tracking-widest transition-colors rounded-sm shadow-[0_0_15px_rgba(255,32,32,0.3)] cursor-pointer"
                     >
                         &lt; BACK
                     </button>
