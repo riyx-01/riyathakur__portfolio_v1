@@ -41,7 +41,7 @@ export default function ContactFlipCard() {
     };
 
     return (
-        <div className="w-full max-w-5xl mx-auto" style={{ perspective: 2000 }}>
+        <div className="w-full max-w-5xl mx-auto h-[600px] py-12" style={{ perspective: 2000 }}>
             <motion.div
                 className="w-full h-full relative cursor-grab active:cursor-grabbing"
                 style={{ transformStyle: 'preserve-3d', rotateY }}
@@ -65,7 +65,7 @@ export default function ContactFlipCard() {
                     }}
                 >
                     <div 
-                        className="w-full h-full [&>div]:w-full [&>div]:h-full [&>div]:!transform-none"
+                        className="scale-95 md:scale-100 lg:scale-110 transition-transform duration-300 flex flex-col items-center gap-12"
                         onPointerDown={(e) => {
                             // Don't prevent drag if they click empty space, but allow clicking links
                             const target = e.target as HTMLElement;
@@ -78,9 +78,9 @@ export default function ContactFlipCard() {
                             title="Contact Protocol"
                             subtitle="COMMUNICATION"
                             stack="Email, GitHub, LinkedIn, Resume"
-                            desc={<a href="mailto:riyathakur155555@gmail.com" className="hover:text-white transition-colors underline relative z-50">riyathakur155555@gmail.com</a>}
-                            features={<a href="https://github.com/riyx-01" target="_blank" rel="noreferrer" className="hover:text-white transition-colors underline relative z-50">github.com/riyx-01</a>}
-                            demo={<a href="https://www.linkedin.com/in/riyathakur01" target="_blank" rel="noreferrer" className="hover:text-white transition-colors underline relative z-50">linkedin.com/in/riyathakur01</a>}
+                            desc={<a href="mailto:riyathakur155555@gmail.com" className="text-lg md:text-xl font-bold text-white hover:text-[#ff2020] transition-colors underline relative z-50">riyathakur155555@gmail.com</a>}
+                            features={<a href="https://github.com/riyx-01" target="_blank" rel="noreferrer" className="text-lg md:text-xl font-bold text-white hover:text-[#ff2020] transition-colors underline relative z-50">github.com/riyx-01</a>}
+                            demo={<a href="https://www.linkedin.com/in/riyathakur01" target="_blank" rel="noreferrer" className="text-lg md:text-xl font-bold text-white hover:text-[#ff2020] transition-colors underline relative z-50">linkedin.com/in/riyathakur01</a>}
                             link="https://riyathakur.netlify.app/"
                             linkText="VIEW RESUME"
                             theme="red"
@@ -90,16 +90,16 @@ export default function ContactFlipCard() {
                             featuresLabel="GitHub"
                             demoLabel="LinkedIn"
                         />
+
+                        {/* Manual Flip Button */}
+                        <button 
+                            onClick={handleFlipToBack}
+                            onPointerDown={(e) => e.stopPropagation()} // Prevent drag conflict
+                            className="z-50 px-8 py-3 border border-[#ff2020] bg-[#0a0510]/80 text-[#ff2020] hover:bg-[#ff2020] hover:text-black font-mono text-sm tracking-widest transition-colors rounded-sm shadow-[0_0_15px_rgba(255,32,32,0.3)]"
+                        >
+                            REVEAL TERMINAL &gt;
+                        </button>
                     </div>
-                    
-                    {/* Manual Flip Button */}
-                    <button 
-                        onClick={handleFlipToBack}
-                        onPointerDown={(e) => e.stopPropagation()} // Prevent drag conflict
-                        className="absolute bottom-8 right-8 z-50 px-6 py-2 border border-[#ff2020] bg-[#0a0510]/80 text-[#ff2020] hover:bg-[#ff2020] hover:text-black font-mono text-sm tracking-widest transition-colors rounded-sm shadow-[0_0_15px_rgba(255,32,32,0.3)]"
-                    >
-                        REVEAL TERMINAL &gt;
-                    </button>
                 </div>
 
                 {/* BACK FACE */}

@@ -279,14 +279,40 @@ export default function Home() {
                 <AchievementsSection />
 
                 {/* 6. CONTACT & LINKS */}
-                <section id="contact" className="section relative contact-section" style={{ background: 'linear-gradient(to bottom, #0a0510 0%, #1a0830 50%, #0a0510 100%)' }}>
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#ff2020]/10 via-transparent to-transparent z-0"></div>
-                    <div className="container relative z-10 terminal-footer">
-                        <div className="flex justify-center items-center w-full mt-8">
+                <section id="contact" className="section relative contact-section min-h-screen flex flex-col justify-center overflow-hidden" style={{ background: '#0a0510' }}>
+                    
+                    <div className="container relative z-10 terminal-footer mt-12 mb-24">
+                        <div className="flex justify-center items-center w-full">
                             <ContactFlipCard />
                         </div>
                     </div>
                 </section>
+
+                {/* CYBERPUNK FOOTER */}
+                <footer className="w-full relative z-20 bg-[#020104] border-t border-[#ff2020]/30 py-8">
+                    <div className="container mx-auto px-6">
+                        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                            <div className="flex flex-col items-center md:items-start">
+                                <span className="text-[#ff2020] font-mono text-xl font-bold tracking-widest">RIYA THAKUR</span>
+                                <span className="text-[#94a3b8] font-mono text-sm tracking-widest mt-1">SYSTEM.ONLINE // {new Date().getFullYear()}</span>
+                            </div>
+                            
+                            <div className="flex items-center gap-6">
+                                <a href="https://github.com/riyx-01" target="_blank" rel="noreferrer" className="text-[#94a3b8] hover:text-[#ff2020] transition-colors font-mono text-sm tracking-widest">
+                                    [ GITHUB ]
+                                </a>
+                                <a href="https://www.linkedin.com/in/riyathakur01" target="_blank" rel="noreferrer" className="text-[#94a3b8] hover:text-[#ff2020] transition-colors font-mono text-sm tracking-widest">
+                                    [ LINKEDIN ]
+                                </a>
+                            </div>
+                        </div>
+                        <div className="mt-8 text-center border-t border-[#ff2020]/10 pt-4">
+                            <p className="text-[#475569] font-mono text-xs tracking-widest">
+                                DESIGNED & ENGINEERED WITH <span>♥</span> IN MUMBAI
+                            </p>
+                        </div>
+                    </div>
+                </footer>
             </div>
 
             {/* Navigation Bar: Custom interactive GooeyNav */}
