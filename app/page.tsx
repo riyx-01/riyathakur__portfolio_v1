@@ -7,6 +7,7 @@ import ProjectTicket from '../components/portfolio/ProjectTicket';
 import SplashCursor from '../components/portfolio/SplashCursor';
 import SkillsSection from '../components/portfolio/SkillsSection';
 import ContactFlipCard from '../components/portfolio/ContactFlipCard';
+import TechAuroraBg from '../components/portfolio/TechAuroraBg';
 
 const projectsData = [
     {
@@ -99,6 +100,15 @@ const projectsData = [
         features: "Conversion rate optimization (CRO); web analytics dashboard; responsive layout engines.",
         demo: "SEO Strategy, Web Design, Marketing Integrations",
         theme: "blue" as const
+    },
+    {
+        title: "Employee Management System",
+        subtitle: "FULL-STACK HR PLATFORM",
+        stack: "React, TypeScript, Django DRF, Docker",
+        desc: "A robust, full-stack Employee Management System designed to streamline HR operations, automated payroll, and financial advance tracking.",
+        features: "Automated payroll processing; Advance validation; Auth0 JWT security; Dockerized deployment.",
+        demo: "Enterprise Architecture, Decoupled Systems, Database Management",
+        theme: "red" as const
     }
 ];
 
@@ -280,7 +290,7 @@ export default function Home() {
 
                 {/* 6. CONTACT & LINKS */}
                 <section id="contact" className="section relative contact-section min-h-screen flex flex-col justify-center overflow-hidden" style={{ background: '#0a0510' }}>
-                    
+                    <TechAuroraBg />
                     <div className="container relative z-10 terminal-footer mt-12 mb-24">
                         <div className="flex justify-center items-center w-full">
                             <ContactFlipCard />

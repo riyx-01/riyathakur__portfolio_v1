@@ -1,0 +1,24 @@
+**Project Title:** Employee Management System
+
+**Overview:**
+A robust, full-stack Employee Management System designed to streamline human resource operations, payroll processing, and financial advance tracking. Built with a decoupled architecture, the system provides a scalable and secure platform for managing sensitive organizational data.
+
+**Key Statistics & Impact:**
+- **Enterprise-Grade Security:** Integrated with Auth0 for JWT-based secure authentication and authorization.
+- **Automated Payroll Engine:** Features an automated salary calculation system processing gross salaries (Basic + HRA + Bonus - Deductions) in real-time.
+- **Financial Risk Mitigation:** Implemented logic to strictly restrict employee financial advances to their current gross salary limit, ensuring 100% compliance.
+- **Modern Architecture:** 100% decoupled frontend (React/TypeScript) and backend (Django REST Framework) communicating via a secure RESTful API.
+- **Containerized Deployment:** Fully Dockerized ecosystem utilizing `docker-compose` for rapid, consistent, and scalable deployments across environments.
+- **Comprehensive API:** Versioned API (/api/v1/) with robust endpoints for Employee Data, Payroll, and Advance Management, including built-in search, pagination, and sorting capabilities.
+
+**Tech Stack:**
+- **Frontend:** React 18, TypeScript, Vite, Axios, Lucide React (for modern iconography).
+- **Backend:** Python 3.12, Django 6.0, Django REST Framework (DRF).
+- **Database:** SQLite (development/testing), easily scalable to PostgreSQL.
+- **Authentication & Security:** Auth0 (JWT - JSON Web Tokens).
+- **DevOps & Deployment:** Docker, Docker Compose.
+
+**Core Modules:**
+1. **Employee Management Module:** Complete lifecycle management with advanced filtering, searching, and pagination.
+2. **Salary Management Module:** Automated ledger for salary breakdown and history tracking.
+3. **Advance Management Module:** Financial tracking for employee loans/advances with automated validation checks against salary thresholds.
