@@ -9,6 +9,9 @@ export default function TechAuroraBg() {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
+        // Disable particle rendering on mobile for performance
+        if (window.innerWidth < 768) return;
+
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
@@ -86,28 +89,17 @@ export default function TechAuroraBg() {
     return (
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" style={{ background: '#0a0510' }}>
             {/* Ambient Aurora Glows */}
-            <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full opacity-20 blur-[100px]" 
-                 style={{ background: 'radial-gradient(circle, rgba(88,28,135,0.8) 0%, rgba(10,5,16,0) 70%)', animation: 'float 25s infinite ease-in-out alternate' }}></div>
+            <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full opacity-20 blur-[60px] md:blur-[100px]" 
+                 style={{ background: 'radial-gradient(circle, rgba(88,28,135,0.8) 0%, rgba(10,5,16,0) 70%)', transform: 'translateZ(0)', willChange: 'transform' }}></div>
             
-            <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full opacity-15 blur-[120px]" 
-                 style={{ background: 'radial-gradient(circle, rgba(14,165,233,0.8) 0%, rgba(10,5,16,0) 70%)', animation: 'float-reverse 30s infinite ease-in-out alternate' }}></div>
+            <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full opacity-15 blur-[80px] md:blur-[120px]" 
+                 style={{ background: 'radial-gradient(circle, rgba(14,165,233,0.8) 0%, rgba(10,5,16,0) 70%)', transform: 'translateZ(0)', willChange: 'transform' }}></div>
 
-            <div className="absolute top-[30%] left-[40%] w-[40%] h-[40%] rounded-full opacity-10 blur-[90px]" 
-                 style={{ background: 'radial-gradient(circle, rgba(225,29,72,0.6) 0%, rgba(10,5,16,0) 70%)', animation: 'float 35s infinite ease-in-out alternate-reverse' }}></div>
+            <div className="absolute top-[30%] left-[40%] w-[40%] h-[40%] rounded-full opacity-10 blur-[50px] md:blur-[90px]" 
+                 style={{ background: 'radial-gradient(circle, rgba(225,29,72,0.6) 0%, rgba(10,5,16,0) 70%)', transform: 'translateZ(0)', willChange: 'transform' }}></div>
 
-            {/* Particle Network Overlay */}
-            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ opacity: 0.8 }} />
-
-            <style>{`
-                @keyframes float {
-                    0% { transform: translate(0, 0) scale(1); }
-                    100% { transform: translate(8%, 12%) scale(1.1); }
-                }
-                @keyframes float-reverse {
-                    0% { transform: translate(0, 0) scale(1); }
-                    100% { transform: translate(-10%, -8%) scale(1.15); }
-                }
-            `}</style>
+            {/* Particle Network Overlay (Disabled on mobile) */}
+            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full hidden md:block" style={{ opacity: 0.8 }} />
         </div>
     );
 }

@@ -1,13 +1,16 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AchievementsSection from '../components/portfolio/AchievementsSection';
 import ProjectsDeck from '../components/portfolio/ProjectsDeck';
 import ProjectTicket from '../components/portfolio/ProjectTicket';
-import SplashCursor from '../components/portfolio/SplashCursor';
 import SkillsSection from '../components/portfolio/SkillsSection';
 import ContactFlipCard from '../components/portfolio/ContactFlipCard';
 import TechAuroraBg from '../components/portfolio/TechAuroraBg';
+import Preloader from '../components/portfolio/Preloader';
+import dynamic from 'next/dynamic';
+
+const SplashCursor = dynamic(() => import('../components/portfolio/SplashCursor'), { ssr: false });
 
 const projectsData = [
     {
@@ -113,8 +116,15 @@ const projectsData = [
 ];
 
 export default function Home() {
+    const [isMobile, setIsMobile] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
+        setIsMounted(true);
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
         // 1. Gooey Nav Logic
         const navItems = document.querySelectorAll('.nav-item');
         const navBlob = document.getElementById('nav-blob');
@@ -190,10 +200,12 @@ export default function Home() {
 
         // 3. Magic Rings Cursor Effect (Removed in favor of SplashCursor)
 
+        return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
     return (
         <>
+            <Preloader />
             <div className="scanline"></div>
             <SplashCursor />
 
@@ -202,14 +214,16 @@ export default function Home() {
                 {/* 1. HERO / HEADER SECTION */}
                 <section id="hero" className="section hero-section">
                     <div className="hero-bg-wrapper">
-                        <video className="hero-bg-video" autoPlay loop muted playsInline>
-                            <source src="/videos/open.mp4" type="video/mp4" />
-                        </video>
+                        {isMounted && !isMobile && (
+                            <video className="hero-bg-video" autoPlay loop muted playsInline>
+                                <source src="/videos/open.mp4" type="video/mp4" />
+                            </video>
+                        )}
                         <div className="hero-overlay"></div>
                     </div>
                     <div className="container hero-content flex flex-col md:block items-center md:items-start text-center md:text-left">
                         <h1 className="display-name">RIYA THAKUR</h1>
-                        <h2 className="role-title">MCA CANDIDATE & FULL-STACK DEVELOPER</h2>
+                        <h2 className="role-title">MCA CANDIDATE & SOFTWARE ENGINEER</h2>
 
                         <div className="hero-meta">
                             <span className="badge">MCA.DEV</span>
@@ -217,7 +231,7 @@ export default function Home() {
                         </div>
 
                         <p className="bio-summary">
-                            Results-driven Information Technology specialist with First-Class Honours (9.39/10 GPA). Demonstrated expertise in architecting full-stack web applications, implementing deep learning solutions, and leading technical teams.
+                            Versatile Software Engineer with First-Class Honours (9.39 GPA) and a passion for crafting robust digital solutions. With expertise spanning scalable full-stack development, modern interfaces, and intelligent systems, I have a proven track record of delivering impactful applications and leading technical teams.
                         </p>
 
                         <div className="auth-prompt" id="auth-prompt">
@@ -229,24 +243,34 @@ export default function Home() {
                 {/* 2. ABOUT / PERSPECTIVE SECTION */}
                 <section id="about" className="section about-section">
                     <div className="about-bg-wrapper">
-                        <video className="about-bg-video" autoPlay loop muted playsInline>
-                            <source src="/videos/type.mp4" type="video/mp4" />
-                        </video>
+                        {isMounted && !isMobile && (
+                            <video className="about-bg-video" autoPlay loop muted playsInline>
+                                <source src="/videos/type.mp4" type="video/mp4" />
+                            </video>
+                        )}
                     </div>
                     <div className="container">
                         <div className="section-header">
-                            <span className="subtitle">BIO (Perspective Log v.2025)</span>
-                            <h2 className="heading">ENGINEERING BETTER FUTURES</h2>
+                            <span className="subtitle">PROFESSIONAL OVERVIEW</span>
+                            <h2 className="heading">ENGINEERING SCALABLE SOLUTIONS</h2>
                         </div>
 
                         <div className="about-grid">
                             <div className="about-text">
-                                <p>Bridging academic excellence and professional execution. Eager to drive digital transformation initiatives utilizing modern frameworks and intelligent algorithms.</p>
+                                <p>I thrive at the intersection of design, data, and software engineering. With a solid foundation in computer applications and hands-on experience across the entire development stack, I build systems that solve complex problems. From intuitive frontend interfaces to highly optimized backend architectures, my goal is to drive digital innovation through clean code and strategic thinking.</p>
                             </div>
 
                             <div className="core-stats">
                                 <div className="stat-point">
-                                    <span className="stat-label">IT GPA</span>
+                                    <span className="stat-label">PRODUCTION PROJECTS</span>
+                                    <span className="stat-value">10+</span>
+                                </div>
+                                <div className="stat-point">
+                                    <span className="stat-label">TECHNOLOGIES & TOOLS</span>
+                                    <span className="stat-value">15+</span>
+                                </div>
+                                <div className="stat-point">
+                                    <span className="stat-label">IT GPA (FIRST-CLASS)</span>
                                     <span className="stat-value">9.39</span>
                                 </div>
                                 <div className="stat-point">
@@ -257,10 +281,10 @@ export default function Home() {
                         </div>
 
                         <div className="attributes-tags">
-                            <div className="tag">ADAPTABLE</div>
+                            <div className="tag">FULL-STACK DEVELOPMENT</div>
+                            <div className="tag">SYSTEM ARCHITECTURE</div>
                             <div className="tag">PROBLEM SOLVING</div>
-                            <div className="tag">SCALABLE DESIGN</div>
-                            <div className="tag">TEAM LEADERSHIP</div>
+                            <div className="tag">AGILE LEADERSHIP</div>
                         </div>
                     </div>
                 </section>
@@ -270,9 +294,11 @@ export default function Home() {
                 {/* 4. PROJECTS INTERFACE */}
                 <section id="projects" className="section relative projects-section overflow-hidden">
                     <div className="hero-bg-wrapper absolute inset-0 z-0">
-                        <video className="hero-bg-video w-full h-full object-cover opacity-30" autoPlay loop muted playsInline>
-                            <source src="/videos/type.mp4" type="video/mp4" />
-                        </video>
+                        {isMounted && !isMobile && (
+                            <video className="hero-bg-video w-full h-full object-cover opacity-30" autoPlay loop muted playsInline>
+                                <source src="/videos/type.mp4" type="video/mp4" />
+                            </video>
+                        )}
                         <div className="hero-overlay absolute inset-0 bg-[#0a0510]/80"></div>
                     </div>
                     <div className="container relative z-10">

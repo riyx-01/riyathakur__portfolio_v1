@@ -45,6 +45,11 @@ function SplashCursor({
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    
+    // Disable on mobile devices for performance
+    if (window.innerWidth < 768) {
+        return;
+    }
 
     let isActive = true;
 
@@ -1079,25 +1084,8 @@ function SplashCursor({
   ]);
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: 9999, // Render above everything else
-        pointerEvents: 'none'
-      }}
-    >
-      <canvas
-        ref={canvasRef}
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'block'
-        }}
-      />
+    <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-50 hidden md:block">
+      <canvas ref={canvasRef} className="w-full h-full block" />
     </div>
   );
 }
