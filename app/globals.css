@@ -149,6 +149,7 @@ html, body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
 }
 
 /* Typography as Architecture */
@@ -254,7 +255,7 @@ h1, h2, h3, h4 {
 }
 
 .section {
-    min-height: 100vh;
+    min-height: 100dvh;
     padding: 6rem 2rem;
     display: flex;
     flex-direction: column;
@@ -723,18 +724,106 @@ h1, h2, h3, h4 {
     z-index: 1;
 }
 
-/* Responsive */
+/* Responsive App Styling */
 @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .asymmetric-grid { display: flex; flex-direction: column; }
     .module { margin-top: 0 !important; }
-    .nav-item { padding: 0.8rem 1rem; font-size: 0.8rem; }
-    .display-name { font-size: 3rem; }
+    .display-name { font-size: clamp(2.5rem, 8vw, 4rem); }
+}
+
+@media (max-width: 768px) {
+    /* Mobile App Navigation (Bottom Tab Bar) */
+    .gooey-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        padding: 0;
+        background: rgba(10, 5, 16, 0.95);
+        border-top: 1px solid rgba(255,255,255,0.1);
+        z-index: 9999;
+    }
+    .nav-container {
+        border-radius: 0;
+        border: none;
+        background: transparent;
+        justify-content: space-between;
+        padding: 0.2rem 0.5rem;
+        filter: none; /* Crisp text for mobile tabs */
+        backdrop-filter: blur(20px);
+    }
+    .nav-blob {
+        display: none; /* Hide gooey blob on mobile */
+    }
+    .nav-item {
+        padding: 1rem 0.25rem;
+        font-size: 0.65rem;
+        flex: 1;
+        text-align: center;
+        color: var(--grey);
+        font-weight: 500;
+    }
+    .nav-item:hover, .nav-item.active { 
+        color: var(--red); 
+        background: transparent; 
+    }
+    .scroll-container {
+        padding-bottom: 70px; /* Space for bottom nav */
+    }
+    
+    /* Global Section Spacing */
+    .section {
+        padding: 4rem 1.5rem;
+    }
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+    .heading {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+    
+    /* Ledger / Achievements */
+    .ledger {
+        padding-left: 1.5rem;
+    }
+    .ledger-item {
+        margin-bottom: 3rem;
+    }
+    .ledger-marker {
+        left: -1.85rem;
+    }
+    
+    /* Terminal Contact */
+    .terminal-footer {
+        padding: 1.5rem;
+    }
+    .c-key { width: 80px; font-size: 0.9rem; }
+    .c-val { font-size: 0.9rem; word-break: break-all; }
 }
 
 @media (max-width: 600px) {
-    .nav-item { 
-        padding: 0.6rem 0.8rem; 
-        font-size: 0.72rem; 
+    .projects-deck-wrapper {
+        scroll-snap-type: x mandatory;
+        padding: 0 1rem;
+    }
+    .projects-deck {
+        padding: 0;
+        gap: 1rem;
+    }
+    .project-card {
+        width: 85vw;
+        height: 75dvh;
+        scroll-snap-align: center;
+    }
+    .card-inner {
+        padding: 1.5rem;
+    }
+    .proj-desc {
+        font-size: 0.9rem;
+    }
+    .tech-badge {
+        font-size: 0.65rem;
     }
 }

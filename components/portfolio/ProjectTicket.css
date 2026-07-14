@@ -354,3 +354,14 @@
     color: #fff;
     box-shadow: 0 0 15px var(--t-accent-glow);
 }
+
+@media (max-width: 600px) {
+    .ticket-wrapper {
+        font-size: 8.5px;
+    }
+}
+@media (max-width: 400px) {
+    .ticket-wrapper {
+        font-size: 7.5px;
+    }
+}
