@@ -1,7 +1,7 @@
-/* 3D Flip Card Styles */
 .flip-card {
   background-color: transparent;
   perspective: 2000px;
+  height: 520px;
 }
 
 .flip-card-inner {
@@ -40,4 +40,22 @@
 
 .flip-card-back {
   transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+  .flip-card {
+    height: 330px;
+  }
+  .flip-card .ticket-wrapper {
+    font-size: 8.5px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-card {
+    height: 260px;
+  }
+  .flip-card .ticket-wrapper {
+    font-size: 6.8px !important;
+  }
 }

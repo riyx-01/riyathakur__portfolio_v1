@@ -41,7 +41,7 @@ export default function ContactFlipCard() {
     };
 
     return (
-        <div className="w-full max-w-5xl h-[520px] mx-auto" style={{ perspective: 2000 }}>
+        <div className="w-full max-w-5xl mx-auto" style={{ perspective: 2000 }}>
             <motion.div
                 className="w-full h-full relative cursor-grab active:cursor-grabbing"
                 style={{ transformStyle: 'preserve-3d', rotateY }}
