@@ -36,12 +36,14 @@ const projectsData = [
         theme: "red" as const
     },
     {
-        title: "Deepfake Detection",
+        title: "Satyanetra (Deepfake Detection)",
         subtitle: "ML / VISION",
         stack: "Python, TensorFlow, ResNet-50, OpenCV",
         desc: "Production-ready deep learning pipeline achieving high accuracy in detecting manipulated visual media.",
         features: "Transfer learning with ResNet-50; Grad-CAM heatmaps; Tensor quantization for latency optimization.",
         demo: "Machine learning, Computer vision, Containerized web deployments",
+        link: "https://youtu.be/BoMISavqd88",
+        linkText: "LAUNCH DEMO",
         theme: "blue" as const
     },
     {
