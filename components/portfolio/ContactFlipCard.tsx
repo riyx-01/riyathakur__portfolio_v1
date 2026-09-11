@@ -113,9 +113,9 @@ export default function ContactFlipCard() {
                     }}
                 >
                     <div className="ticket-wrapper red-theme w-full h-full p-2 max-w-[450px] mx-auto md:max-w-none" style={{ transform: 'none' }}>
-                        <div className="ticket w-full h-full border border-[#ff2020]/50 bg-[#1a0830]/95 backdrop-blur-xl p-4 md:p-8 shadow-[0_0_30px_rgba(255,32,32,0.3)] rounded-lg flex flex-col justify-between relative overflow-hidden">
+                        <div className="ticket w-full h-full border border-[#ff2020]/50 bg-[#1a0830]/95 p-4 md:p-8 shadow-[0_0_15px_rgba(255,32,32,0.1)] rounded-lg flex flex-col justify-between relative overflow-hidden">
                             {/* Matrix Rain effect on the back */}
-                            <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-screen"></div>
+                            <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
                             
                             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center gap-4 md:gap-8">
                                 <div>
