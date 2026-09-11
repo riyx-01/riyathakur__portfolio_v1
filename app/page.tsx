@@ -14,17 +14,6 @@ const SplashCursor = dynamic(() => import('../components/portfolio/SplashCursor'
 
 const projectsData = [
     {
-        title: "DS Visualizer (DataStruct2.0)",
-        subtitle: "CORE VIZ ENGINE",
-        stack: "React, Three.js, Monaco, WASM",
-        desc: "High-fidelity educational platform for visualizing complex data structures and algorithms in real-time with cinematic effects.",
-        features: "Real-Time Code-to-Viz Monaco integration; 3D BookReader with TTS; WASM secure execution sandbox.",
-        demo: "Advanced UI/UX, Three.js, Algorithm Engineering",
-        link: "https://ds-vis.vercel.app/",
-        linkText: "LAUNCH DEPLOYMENT",
-        theme: "blue" as const
-    },
-    {
         title: "Manthan Event Platform",
         subtitle: "LIVE ARCHITECTURE",
         stack: "Next.js, Framer Motion, Agile, Production",
@@ -34,6 +23,30 @@ const projectsData = [
         link: "https://bvimitmanthan.vercel.app/",
         linkText: "LAUNCH DEPLOYMENT",
         theme: "red" as const
+    },
+    {
+        title: "Shopify & WordPress",
+        subtitle: "DIGITAL CORE",
+        stack: "WordPress, SEO, Responsive Design, Analytics",
+        desc: "Designed responsive, conversion-focused blog and service websites with SEO content optimization and Google Analytics integrations.",
+        features: "Conversion rate optimization (CRO); web analytics dashboard; responsive layout engines.",
+        demo: "SEO Strategy, Web Design, Marketing Integrations",
+        link: "https://nyraa360dm.wordpress.com/",
+        linkText: "LAUNCH WORDPRESS",
+        link2: "https://drive.google.com/file/d/19MbAi50aXKO3RRAMOhyc3VHltjBoD8gT/view?usp=sharing",
+        linkText2: "LAUNCH SHOPIFY",
+        theme: "blue" as const
+    },
+    {
+        title: "DS Visualizer (DataStruct2.0)",
+        subtitle: "CORE VIZ ENGINE",
+        stack: "React, Three.js, Monaco, WASM",
+        desc: "High-fidelity educational platform for visualizing complex data structures and algorithms in real-time with cinematic effects.",
+        features: "Real-Time Code-to-Viz Monaco integration; 3D BookReader with TTS; WASM secure execution sandbox.",
+        demo: "Advanced UI/UX, Three.js, Algorithm Engineering",
+        link: "https://ds-vis.vercel.app/",
+        linkText: "LAUNCH DEPLOYMENT",
+        theme: "blue" as const
     },
     {
         title: "Satyanetra (Deepfake Detection)",
@@ -96,19 +109,6 @@ const projectsData = [
         link: "https://chatpulse.streamlit.app/",
         linkText: "LAUNCH DEPLOYMENT",
         theme: "red" as const
-    },
-    {
-        title: "Shopify & Nyraa Marketing",
-        subtitle: "DIGITAL CORE",
-        stack: "WordPress, SEO, Responsive Design, Analytics",
-        desc: "Designed responsive, conversion-focused blog and service websites with SEO content optimization and Google Analytics integrations.",
-        features: "Conversion rate optimization (CRO); web analytics dashboard; responsive layout engines.",
-        demo: "SEO Strategy, Web Design, Marketing Integrations",
-        link: "https://nyraa360dm.wordpress.com/",
-        linkText: "LAUNCH WORDPRESS",
-        link2: "https://drive.google.com/file/d/19MbAi50aXKO3RRAMOhyc3VHltjBoD8gT/view?usp=sharing",
-        linkText2: "LAUNCH SHOPIFY",
-        theme: "blue" as const
     },
     {
         title: "Employee Management System",
