@@ -81,7 +81,7 @@ export default function ContactFlipCard() {
                             desc={<a href="mailto:riyathakur155555@gmail.com" className="text-lg md:text-xl font-bold text-white hover:text-[#ff2020] transition-colors underline relative z-50">riyathakur155555@gmail.com</a>}
                             features={<a href="https://github.com/riyx-01" target="_blank" rel="noreferrer" className="text-lg md:text-xl font-bold text-white hover:text-[#ff2020] transition-colors underline relative z-50">github.com/riyx-01</a>}
                             demo={<a href="https://www.linkedin.com/in/riyathakur01" target="_blank" rel="noreferrer" className="text-lg md:text-xl font-bold text-white hover:text-[#ff2020] transition-colors underline relative z-50">linkedin.com/in/riyathakur01</a>}
-                            link="https://riyathakur.netlify.app/"
+                            link="https://drive.google.com/file/d/1x9zK4yhTtD9LZJ_vbkFlNRk6nsxOzfzP/view?usp=sharing"
                             linkText="VIEW RESUME"
                             theme="red"
                             index="CT"
@@ -128,7 +128,7 @@ export default function ContactFlipCard() {
                                 </div>
                                 
                                 <a 
-                                    href="https://riyathakur.netlify.app/" 
+                                    href="https://drive.google.com/file/d/1x9zK4yhTtD9LZJ_vbkFlNRk6nsxOzfzP/view?usp=sharing" 
                                     target="_blank" 
                                     rel="noreferrer"
                                     onPointerDown={(e) => e.stopPropagation()}
