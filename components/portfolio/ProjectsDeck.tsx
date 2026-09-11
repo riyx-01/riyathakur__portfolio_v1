@@ -13,6 +13,8 @@ interface ProjectsDeckProps {
         demo?: React.ReactNode;
         link?: string;
         linkText?: string;
+        link2?: string;
+        linkText2?: string;
         theme: 'blue' | 'red';
     }[];
 }
@@ -54,6 +56,8 @@ export default function ProjectsDeck({ projects }: ProjectsDeckProps) {
                     demo={projects[activeIndex].demo}
                     link={projects[activeIndex].link}
                     linkText={projects[activeIndex].linkText}
+                    link2={projects[activeIndex].link2}
+                    linkText2={projects[activeIndex].linkText2}
                     theme={projects[activeIndex].theme}
                 />
             </div>

@@ -10,6 +10,8 @@ export interface ProjectTicketProps {
     demo?: React.ReactNode;
     link?: string;
     linkText?: string;
+    link2?: string;
+    linkText2?: string;
     theme: 'blue' | 'red';
     index: number | string;
     typeLabel?: string;
@@ -27,6 +29,8 @@ export default function ProjectTicket({
     demo,
     link,
     linkText = 'LAUNCH',
+    link2,
+    linkText2 = 'LAUNCH',
     theme,
     index,
     typeLabel = 'Project',
@@ -91,12 +95,18 @@ export default function ProjectTicket({
                         <div className="t-barcode"></div>
                         <div className="t-barcode-id">UI-77-9X04-{paddedIndex}</div>
                     </div>
-                    <div className="t-admit" style={{ zIndex: 10 }}>
-                        {link ? (
+                    <div className="t-admit" style={{ zIndex: 10, display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center' }}>
+                        {link && (
                             <a href={link} target="_blank" rel="noreferrer" className="proj-ticket-link">
                                 {linkText}
                             </a>
-                        ) : (
+                        )}
+                        {link2 && (
+                            <a href={link2} target="_blank" rel="noreferrer" className="proj-ticket-link">
+                                {linkText2}
+                            </a>
+                        )}
+                        {!link && !link2 && (
                             <>
                                 <div className="t-admit-text">Code</div>
                                 <div className="t-admit-num">{paddedIndex}</div>

@@ -104,8 +104,10 @@ const projectsData = [
         desc: "Designed responsive, conversion-focused blog and service websites with SEO content optimization and Google Analytics integrations.",
         features: "Conversion rate optimization (CRO); web analytics dashboard; responsive layout engines.",
         demo: "SEO Strategy, Web Design, Marketing Integrations",
-        link: "https://drive.google.com/file/d/1mw1zgzPmNYghEzUuT0sEaAVtiK7yWrNO/view?usp=sharing",
-        linkText: "LAUNCH DEMO",
+        link: "https://nyraa360dm.wordpress.com/",
+        linkText: "LAUNCH WORDPRESS",
+        link2: "https://drive.google.com/file/d/19MbAi50aXKO3RRAMOhyc3VHltjBoD8gT/view?usp=sharing",
+        linkText2: "LAUNCH SHOPIFY",
         theme: "blue" as const
     },
     {
