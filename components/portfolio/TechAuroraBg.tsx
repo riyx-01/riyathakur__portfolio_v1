@@ -99,7 +99,7 @@ export default function TechAuroraBg() {
                  style={{ background: 'radial-gradient(circle, rgba(225,29,72,0.6) 0%, rgba(10,5,16,0) 70%)', transform: 'translateZ(0)', willChange: 'transform' }}></div>
 
             {/* Particle Network Overlay (Disabled on mobile) */}
-            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full hidden md:block" style={{ opacity: 0.8 }} />
+            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ opacity: 0.8 }} />
         </div>
     );
 }
