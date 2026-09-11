@@ -9,8 +9,7 @@ export default function TechAuroraBg() {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        // Disable particle rendering on mobile for performance
-        if (window.innerWidth < 768) return;
+        // Optimization: Particle count dynamically adjusts based on viewport
 
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
@@ -19,7 +18,7 @@ export default function TechAuroraBg() {
         let height = canvas.height = canvas.parentElement?.clientHeight || window.innerHeight;
 
         const particles: { x: number, y: number, vx: number, vy: number, radius: number, baseAlpha: number }[] = [];
-        const particleCount = Math.floor((width * height) / 15000); // Responsive density
+        const particleCount = Math.floor((width * height) / 30000); // Optimized responsive density
         const connectionDistance = 150;
 
         for (let i = 0; i < particleCount; i++) {

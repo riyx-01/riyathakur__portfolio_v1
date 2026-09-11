@@ -46,10 +46,10 @@ function SplashCursor({
     const canvas = canvasRef.current;
     if (!canvas) return;
     
-    // Disable on mobile devices for performance
-    if (window.innerWidth < 768) {
-        return;
-    }
+    // Optimize on mobile devices for performance
+    const isMobile = window.innerWidth < 768;
+    const activeSimRes = isMobile ? 32 : (SIM_RESOLUTION > 64 ? 64 : SIM_RESOLUTION);
+    const activeDyeRes = isMobile ? 256 : (DYE_RESOLUTION > 512 ? 512 : DYE_RESOLUTION);
 
     let isActive = true;
 
@@ -67,8 +67,8 @@ function SplashCursor({
     }
 
     let config = {
-      SIM_RESOLUTION,
-      DYE_RESOLUTION,
+      SIM_RESOLUTION: activeSimRes,
+      DYE_RESOLUTION: activeDyeRes,
       CAPTURE_RESOLUTION,
       DENSITY_DISSIPATION,
       VELOCITY_DISSIPATION,
