@@ -44,7 +44,7 @@ export default function ContactFlipCard() {
         <div className="w-full max-w-5xl mx-auto h-[450px] md:h-[600px] py-4 md:py-12" style={{ perspective: 2000 }}>
             <motion.div
                 className="w-full h-full relative cursor-grab active:cursor-grabbing"
-                style={{ transformStyle: 'preserve-3d', rotateY }}
+                style={{ transformStyle: 'preserve-3d', rotateY, willChange: 'transform' }}
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.1}
